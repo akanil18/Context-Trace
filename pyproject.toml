@@ -1,0 +1,13 @@
+[project]
+name = "context-compiler"
+version = "0.1.0"
+description = "AST-aware context optimization system for LLMs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
