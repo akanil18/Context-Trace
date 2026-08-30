@@ -12,7 +12,7 @@ class VectorStore:
         self.model = SentenceTransformer(model_name)
         
     def _get_or_create_table(self):
-        if "code_entities" in self.db.list_tables():
+        if "code_entities" in self.db.table_names():
             return self.db.open_table("code_entities")
         else:
             return None
@@ -49,7 +49,7 @@ class VectorStore:
             return []
             
         query_vector = self.model.encode([query])[0]
-        
+    
         results = table.search(query_vector).limit(limit).to_list()
         
         entities = []
